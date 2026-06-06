@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_TYPE=sqlite
+      - DB_STORAGE=./database.sqlite
+      - PORT=3000
+      - JWT_SECRET=dev_jwt_secret_change_in_production
+      - BCRYPT_SALT_ROUNDS=12
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: npm run dev
+
+  # SQL Server service (commented out by default - uncomment for production)
+  # db:
+  #   image: mcr.microsoft.com/mssql/server:2019-latest
+  #   environment:
+  #     SA_PASSWORD: "YourStrong!Passw0rd"
+  #     ACCEPT_EULA: "Y"
+  #   ports:
+  #     - "1433:1433"
+  #   volumes:
+  #     - mssql_data:/var/opt/mssql
+
+# volumes:
+#   mssql_data:

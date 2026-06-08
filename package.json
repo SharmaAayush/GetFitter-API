@@ -12,8 +12,8 @@
     "test:coverage": "jest --coverage"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "GetFitter Team",
+  "license": "MIT",
   "dependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.9.2",

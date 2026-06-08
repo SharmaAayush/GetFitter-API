@@ -10,16 +10,28 @@ const swaggerOptions = {
     info: {
       title: 'GetFitter API',
       version: '1.0.0',
-      description: 'API for GetFitter fitness tracking application',
+      description: 'API for GetFitter fitness tracking application. This is Phase 1: Foundation & Setup implementation.',
       contact: {
         name: 'GetFitter Team',
         url: 'https://getfitter.example.com'
+      },
+      license: {
+        name: 'MIT',
+        url: 'https://opensource.org/licenses/MIT'
       }
+    },
+    externalDocs: {
+      description: 'Find more info here',
+      url: 'https://github.com/getfitter/getfitter-api'
     },
     servers: [
       {
         url: `http://localhost:${config.PORT}`,
         description: 'Development server'
+      },
+      {
+        url: 'https://api.getfitter.example.com',
+        description: 'Production server'
       }
     ],
     components: {
